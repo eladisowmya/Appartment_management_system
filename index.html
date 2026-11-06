@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartment Visitor Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div><h1>Apartment Visitor Management</h1><p>Security Desk • Visitor Entry & Exit</p></div></header>
+  <main>
+    <section class="stats">
+      <div class="stat"><span>Residents</span><strong id="residentCount">0</strong></div>
+      <div class="stat"><span>Visitors in</span><strong id="insideCount">0</strong></div>
+      <div class="stat"><span>Total visits</span><strong id="visitorCount">0</strong></div>
+    </section>
+    <section class="grid">
+      <article class="card">
+        <h2>Add Resident</h2>
+        <form id="residentForm">
+          <label>Name<input name="name" required placeholder="Resident name"></label>
+          <label>Flat number<input name="flat_no" required placeholder="A-101"></label>
+          <label>Phone<input name="phone" placeholder="Phone number"></label>
+          <label>Email<input name="email" type="email" placeholder="Email address"></label>
+          <button>Add Resident</button>
+        </form>
+      </article>
+      <article class="card">
+        <h2>Register Visitor</h2>
+        <form id="visitorForm">
+          <label>Visitor name<input name="name" required placeholder="Visitor name"></label>
+          <label>Phone<input name="phone" placeholder="Phone number"></label>
+          <label>Vehicle number<input name="vehicle_no" placeholder="Optional"></label>
+          <label>Resident<select name="resident_id" id="residentSelect" required><option value="">Choose resident</option></select></label>
+          <label>Purpose<input name="purpose" placeholder="Meeting / Delivery"></label>
+          <button>Register Entry</button>
+        </form>
+      </article>
+    </section>
+    <section class="card">
+      <div class="table-head"><h2>Visitor Records</h2><button class="secondary" id="refreshBtn">Refresh</button></div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Visitor</th><th>Resident / Flat</th><th>Entry</th><th>Exit</th><th>Status</th><th>Action</th></tr></thead><tbody id="visitorRows"></tbody></table></div>
+    </section>
+    <p id="message" role="status"></p>
+  </main>
+  <footer>FSD Mini Project • Apartment Visitor Management System</footer>
+  <script src="script.js"></script>
+</body>
+</html>
